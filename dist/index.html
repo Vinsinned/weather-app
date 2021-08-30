@@ -3,20 +3,20 @@
 
 <head>
     <link rel="stylesheet" src="style.css">
-    <title>Form</title>
+    <title>Weather App</title>
 </head>
 
 <body>
     <form id="form">
-        <label id="searchDesc" for="search">Choose your location</label>
+        <label id="searchDesc" for="search">Location</label>
         <input id="search">
         <button id="submit">Check Weather</button>
+        <p id="errorMessage"></p>
     </form>
     <div id="display">
     <div id="information">
         <h1 id="location"></h1>
         <p class="temperature">Temperature</p>
-        <p id="errorMessage"></p>
         <p id="temp" class="tempNumb"></p>
         <div id="lowHighDesc">
             <p class="temperature">All time low</p>

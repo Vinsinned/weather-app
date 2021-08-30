@@ -1,6 +1,76 @@
+body {
+    background-image: url("https://source.unsplash.com/random");
+    background-size: cover;
+}
+#form {
+    height: 110px;
+    width: 260px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #AF9AB2;
+    border-bottom-right-radius: 20px;
+    padding-top: 10px;
+}
 #form * {
     display: block;
+    margin: auto;
+    text-align: center;
 }
 #display {
     text-align: center;
+    width: 500px;
+    height: 400px;
+    margin-left: 30%;
+    background-color: white;
+    margin-top: 130px;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    box-shadow: 2px 5px 5px black;
 }
+#lowHighDesc {
+    display: flex;
+    justify-content: space-evenly;
+}
+#lowHighTemp {
+    display: flex;
+    justify-content: space-evenly;
+}
+#location {
+    font-size: 80px;
+}
+#searchDesc {
+    font-size: 20px;
+}
+#search {
+    border: none;
+    border-radius: 20px;
+    height: 20px;
+    padding: 5px 8px 0 16px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+#submit {
+    border: none;
+    width: 150px;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+.temperature {
+    font-size: 30px;
+}
+.tempNumb {
+    font-size: 40px;
+    margin: 0px;
+}
+/*
+#form {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #AF9AB2;
+}
+*/

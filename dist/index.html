@@ -8,16 +8,25 @@
 
 <body>
     <form id="form">
-        <label for="search">Choose your location</label>
+        <label id="searchDesc" for="search">Choose your location</label>
         <input id="search">
         <button id="submit">Check Weather</button>
     </form>
     <div id="display">
+    <div id="information">
         <h1 id="location"></h1>
-        <p id="temp"></p>
-        <p id="min"></p>
-        <p id="max"></p>
+        <p class="temperature">Temperature</p>
         <p id="errorMessage"></p>
+        <p id="temp" class="tempNumb"></p>
+        <div id="lowHighDesc">
+            <p class="temperature">All time low</p>
+            <p class="temperature">All time high</p>
+        </div>
+        <div id="lowHighTemp">
+            <p id="min" class="tempNumb"></p>
+            <p id="max" class="tempNumb"></p>
+        </div>
+    </div>
     </div>
 </body>
 <script src='bundle.js'></script>

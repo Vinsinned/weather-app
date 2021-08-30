@@ -1,7 +1,8 @@
 import './style.css';
 const search = document.querySelector('#search');
 const submit = document.querySelector('#submit');
-const errorMessage = document.querySelector('#errorMessage')
+const errorMessage = document.querySelector('#errorMessage');
+const body = document.querySelector('body');
 submit.addEventListener('click', (event) => {
     event.preventDefault();
     getData(search.value);
@@ -40,8 +41,8 @@ function displayWeather(weatherObject) {
     let max = document.querySelector('#max');
 
     location.textContent = weatherObject.location;
-    temperature.textContent = weatherObject.temperature;
-    min.textContent = weatherObject.min;
-    max.textContent = weatherObject.max;
+    temperature.textContent = weatherObject.temperature + '°F';
+    min.textContent = weatherObject.min + '°F';
+    max.textContent = weatherObject.max + '°F';
 }
 getData('London');

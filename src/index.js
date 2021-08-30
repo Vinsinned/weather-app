@@ -2,7 +2,7 @@ import './style.css';
 const search = document.querySelector('#search');
 const submit = document.querySelector('#submit');
 const errorMessage = document.querySelector('#errorMessage');
-const body = document.querySelector('body');
+let currentLocation = null;
 submit.addEventListener('click', (event) => {
     event.preventDefault();
     /*
@@ -10,7 +10,22 @@ submit.addEventListener('click', (event) => {
         .then(data.json())
     .then()
     */
-    getData(search.value);
+    if (currentLocation != null) {
+        console.log(currentLocation)
+        let location = currentLocation.name.toLowerCase();
+        if (search.value.toLowerCase() === location) {
+            errorMessage.textContent = 'The location is already displayed';
+        }
+    }
+    if (search.value == '') {
+        errorMessage.textContent = 'Please type in a location';
+    } else if (/\d/.test(search.value)) {
+        errorMessage.textContent = 'Input shouldn\'t have any numbers'
+    }
+    if (search.value != '' && search.value.toLowerCase() != location &&
+        /\d/.test(search.value) === false) {
+        getData(search.value);
+    }
 })
 //do this first
 async function getData(location) {
@@ -36,10 +51,10 @@ function processJSON(json) {
         }
         displayWeather(weather);
         errorMessage.textContent = '';
+        //if it works make currentLocation to location
+        currentLocation = json;
     } catch (error) {
-        console.log(error);
         errorMessage.textContent = 'The location doesn\'t exist!';
-        console.log(errorMessage)
     }
 }
 //finally this
